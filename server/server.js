@@ -79,4 +79,6 @@ client.on('disconnect', () => {
 })
 
 // 주소창을 통해 들어왔을 경우
-app.get("/api",(_, res)=>res.send("hello from api!"))
+app.get('/', (req, res) => {
+    res.status(200).send('OK');
+});
