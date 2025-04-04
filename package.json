@@ -7,8 +7,6 @@
     "@supabase/supabase-js": "^2.49.1",
     "cra-template": "1.2.0",
     "dayjs": "^1.11.13",
-    "dotenv": "^16.4.7",
-    "express": "^4.21.2",
     "openai": "^4.90.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
