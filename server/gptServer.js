@@ -5,14 +5,10 @@ import cors from 'cors';
 
 dotenv.config();
 const app = express();
+
+// 모든 도메인 허용하는 단순 CORS 설정
+app.use(cors());
 app.use(express.json());
-app.use(cors({
-  origin: ['https://chat-project-wheat.vercel.app', 'http://localhost:3000'],  // 클라이언트 도메인 추가
-  methods: ['GET', 'POST', 'OPTIONS'],  // OPTIONS 메서드 추가
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true
-}));
-app.options('*', cors());
 const PORT = process.env.PORT || 10001;
 
 
