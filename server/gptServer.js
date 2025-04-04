@@ -7,7 +7,13 @@ dotenv.config();
 const app = express();
 
 // 모든 도메인 허용하는 단순 CORS 설정
-app.use(cors());
+app.use(cors({
+  origin: '*',  // 모든 도메인 허용
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type'],
+  credentials: true
+}));
+
 app.use(express.json());
 const PORT = process.env.PORT || 10001;
 
