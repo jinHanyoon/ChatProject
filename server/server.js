@@ -4,7 +4,7 @@ import *as http from "http";
 
 const app = express();
 const server = http.createServer(app)
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 10000;
 const io = new Server(server,{
 //크로스 오리진
     cors:{
