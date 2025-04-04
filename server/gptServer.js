@@ -13,7 +13,12 @@ app.use(cors({
   allowedHeaders: ['Content-Type'],
   credentials: true
 }));
-
+app.options('/send-gpt', (req, res) => {
+  res.header('Access-Control-Allow-Origin', 'https://chat-project-wheat.vercel.app');  // 클라이언트 도메인 허용
+  res.header('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  res.sendStatus(200);
+});
 app.use(express.json());
 const PORT = process.env.PORT || 10001;
 
