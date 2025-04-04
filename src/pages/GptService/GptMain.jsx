@@ -11,9 +11,9 @@ import useRoomIdStore from '../RoomStore/RoomStore';
 // 불러오기 => 톱니바퀴 클릭 -> roomConditions 전달
 // roomID 으로 방 찾기 => 이 후 날짜별로 채팅 찾기
 
-const GPT_SERVER_URL = process.env.REACT_APP_SOCKET_URL || 'https://chatproject-eak9.onrender.com';
 
 export default function GptMain() {
+const GPT_SERVER_URL = process.env.REACT_APP_SOCKET_URL || 'https://chatproject-eak9.onrender.com';
   const [GetMessages, setGetMessages] = useState([]);
   const DateData = useMessageStore(state=>state.DateData);
   const TargetRoomID=useRoomIdStore(state=>state.TargetRoomID)
