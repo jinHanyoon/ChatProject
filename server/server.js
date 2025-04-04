@@ -4,7 +4,7 @@ import *as http from "http";
 
 const app = express();
 const server = http.createServer(app)
-
+const PORT = process.env.PORT || 3001;
 const io = new Server(server,{
 //크로스 오리진
     cors:{
@@ -12,7 +12,7 @@ const io = new Server(server,{
     }
 });
 
-server.listen(3001, ()=>{
+server.listen(PORT, ()=>{
     console.log('서버에서 듣고 있습니다... 3001')
 });
 

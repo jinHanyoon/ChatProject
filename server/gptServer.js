@@ -4,10 +4,10 @@ import { OpenAI } from 'openai';
 import cors from 'cors';
 
 dotenv.config();
-
 const app = express();
 app.use(express.json());
 app.use(cors());
+const PORT = process.env.PORT || 3002;
 
 const openai = new OpenAI({
   apiKey: process.env.REACT_APP_OPENAI_API_KEY
@@ -35,6 +35,6 @@ app.post('/send-gpt', async (req, res) => {
   }
 });
 
-app.listen(3002, () => {
+app.listen(PORT, () => {
   console.log('서버가 3002 포트에서 실행 중입니다.');
 });
