@@ -11,6 +11,7 @@ import useRoomIdStore from '../RoomStore/RoomStore';
 // 불러오기 => 톱니바퀴 클릭 -> roomConditions 전달
 // roomID 으로 방 찾기 => 이 후 날짜별로 채팅 찾기
 
+const GPT_SERVER_URL = process.env.REACT_APP_GPT_SERVER_URL || 'https://chatproject-gpt-server.onrender.com';
 
 export default function GptMain() {
   const [GetMessages, setGetMessages] = useState([]);
@@ -30,7 +31,7 @@ export default function GptMain() {
     }
     setIsLoading(true);
     try {
-        const response = await fetch('http://localhost:3002/send-gpt', {
+      const response = await fetch(`${GPT_SERVER_URL}/send-gpt`, {  // URL 변경
             method: 'POST',
             headers: { 
                 'Content-Type': 'application/json',
