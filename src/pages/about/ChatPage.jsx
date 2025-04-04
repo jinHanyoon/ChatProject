@@ -21,6 +21,7 @@ export default function ChatPage() {
   const navigate = useNavigate();
   const messageEndRef = useRef(null);
   const { ChatNumber } = useParams();
+  const SOCKET_URL = process.env.REACT_APP_SOCKET_URL || 'https://chatproject-eak9.onrender.com';
 
 
   // Link prop data
@@ -29,8 +30,9 @@ export default function ChatPage() {
 
   useEffect(() => {
     const connectChatServer = () => {
-      const _socket = io(`http://localhost:3001/`, {
+      const _socket = io(SOCKET_URL, {
         autoConnect: false,
+         path: '/socket.io/',
         query: {
           username: userName,
           room: ChatNumber,
