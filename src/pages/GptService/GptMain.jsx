@@ -34,8 +34,7 @@ const GPT_SERVER_URL = process.env.REACT_APP_SOCKET_URL || 'https://chatproject-
       const response = await fetch(`${GPT_SERVER_URL}/send-gpt`, {  // URL 변경
             method: 'POST',
             headers: { 
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
+             'Content-Type': 'application/json'
             },
             body: JSON.stringify({ 
                 message: JSON.stringify(DateData)

@@ -9,6 +9,9 @@ const app = express();
 // 모든 도메인 허용하는 단순 CORS 설정
 app.use(cors({
   origin: '*',  // 모든 도메인 허용
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type'],
+  credentials: true
 }));
 
 app.use(express.json());
