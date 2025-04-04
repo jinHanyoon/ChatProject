@@ -3,79 +3,79 @@ import useSession from '../../auth/session';
 import supabase from '../../api/supabase';
 
 export default function ProfileImg() {
-  const { userUUID } = useSession();
-  const [avatarUrl, setAvatarUrl] = useState(null);
-  const [uploading, setUploading] = useState(false);
+  // const { userUUID } = useSession();
+  // const [avatarUrl, setAvatarUrl] = useState(null);
+  // const [uploading, setUploading] = useState(false);
 
-  useEffect(() => {
-    if (userUUID) {
-      getProfile();
-    }
-  }, [userUUID]);
+  // useEffect(() => {
+  //   if (userUUID) {
+  //     getProfile();
+  //   }
+  // }, [userUUID]);
 
-  async function getProfile() {
-    try {
-      const { data, error } = await supabase
-        .from('profiles')
-        .select('avatar_url')
-        .eq('id', userUUID)
-        .single();
+  // async function getProfile() {
+  //   try {
+  //     const { data, error } = await supabase
+  //       .from('profiles')
+  //       .select('avatar_url')
+  //       .eq('id', userUUID)
+  //       .single();
 
-      if (error) {
-        throw error;
-      }
+  //     if (error) {
+  //       throw error;
+  //     }
 
-      if (data?.avatar_url) {
-        setAvatarUrl(data.avatar_url);
-      }
-    } catch (error) {
-      console.error('프로필 이미지 가져오기 오류:', error);
-    }
-  }
+  //     if (data?.avatar_url) {
+  //       setAvatarUrl(data.avatar_url);
+  //     }
+  //   } catch (error) {
+  //     console.error('프로필 이미지 가져오기 오류:', error);
+  //   }
+  // }
 
-  async function uploadAvatar(event) {
-    try {
-      setUploading(true);
+  // async function uploadAvatar(event) {
+  //   try {
+  //     setUploading(true);
 
-      if (!event.target.files || event.target.files.length === 0) {
-        throw new Error('이미지를 선택해주세요');
-      }
+  //     if (!event.target.files || event.target.files.length === 0) {
+  //       throw new Error('이미지를 선택해주세요');
+  //     }
 
-      const file = event.target.files[0];
-      const fileExt = file.name.split('.').pop();
-      const filePath = `${userUUID}-${Math.random()}.${fileExt}`;
+  //     const file = event.target.files[0];
+  //     const fileExt = file.name.split('.').pop();
+  //     const filePath = `${userUUID}-${Math.random()}.${fileExt}`;
 
-      const { error: uploadError } = await supabase.storage
-        .from('avatars')
-        .upload(filePath, file);
+  //     const { error: uploadError } = await supabase.storage
+  //       .from('avatars')
+  //       .upload(filePath, file);
 
-      if (uploadError) {
-        throw uploadError;
-      }
+  //     if (uploadError) {
+  //       throw uploadError;
+  //     }
 
-      const { data } = supabase.storage.from('avatars').getPublicUrl(filePath);
+  //     const { data } = supabase.storage.from('avatars').getPublicUrl(filePath);
       
-      const { error: updateError } = await supabase
-        .from('profiles')
-        .update({ avatar_url: data.publicUrl })
-        .eq('id', userUUID);
+  //     const { error: updateError } = await supabase
+  //       .from('profiles')
+  //       .update({ avatar_url: data.publicUrl })
+  //       .eq('id', userUUID);
 
-      if (updateError) {
-        throw updateError;
-      }
+  //     if (updateError) {
+  //       throw updateError;
+  //     }
 
-      setAvatarUrl(data.publicUrl);
-    } catch (error) {
-      console.error('이미지 업로드 오류:', error);
-      alert('이미지 업로드에 실패했습니다.');
-    } finally {
-      setUploading(false);
-    }
-  }
+  //     setAvatarUrl(data.publicUrl);
+  //   } catch (error) {
+  //     console.error('이미지 업로드 오류:', error);
+  //     alert('이미지 업로드에 실패했습니다.');
+  //   } finally {
+  //     setUploading(false);
+  //   }
+  // }
 
   return (
     <div className='w-full md:w-1/2 p-6'>
-      <div className=' rounded-2xl shadow-md p-6 transition-all hover:shadow-xl'>
+      {/* <div className=' rounded-2xl shadow-md p-6 transition-all hover:shadow-xl'>
         <div className='flex flex-col items-center'>
           <div className='relative mb-6 group'>
             <div className='w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-gray-800'>
@@ -111,7 +111,7 @@ export default function ProfileImg() {
             프로필 이미지를 클릭하여 변경할 수 있습니다
           </p>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }

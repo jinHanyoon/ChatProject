@@ -1,5 +1,5 @@
 import {Server} from "socket.io"
-import express, { query } from "express";
+import express from "express";
 import *as http from "http";
 
 const app = express();
