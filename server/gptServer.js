@@ -9,9 +9,7 @@ app.use(express.json());
 app.use(cors());
 const PORT = process.env.PORT || 10001;
 
-app.get('/', (req, res) => {
-  res.status(200).send('OK');
-});
+
 const openai = new OpenAI({
   apiKey: process.env.REACT_APP_OPENAI_API_KEY
 });
