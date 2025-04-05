@@ -2,6 +2,7 @@ import {Server} from "socket.io"
 import express from "express";
 import *as http from "http";
 
+import gptRouter from './gptServer.js';
 const app = express();
 const server = http.createServer(app)
 const PORT = process.env.PORT || 10000;
@@ -11,7 +12,7 @@ const io = new Server(server,{
         origin:"*"
     }
 });
-
+app.use('/send-gpt', gptRouter);
 server.listen(PORT, ()=>{
     console.log('서버에서 듣고 있습니다... 3001')
 });
