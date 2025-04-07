@@ -1,8 +1,7 @@
 import {Server} from "socket.io"
 import express from "express";
 import *as http from "http";
-
-
+// 수정
 const app = express();
 const server = http.createServer(app)
 const PORT = process.env.PORT || 10000;
