@@ -13,7 +13,7 @@ import useRoomIdStore from '../RoomStore/RoomStore';
 
 
 export default function GptMain() {
-const GPT_SERVER_URL = process.env.REACT_APP_SOCKET_URL || 'https://chatproject-eak9.onrender.com';
+// const GPT_SERVER_URL = process.env.REACT_APP_SOCKET_URL || 'https://chatproject-eak9.onrender.com';
   const [GetMessages, setGetMessages] = useState([]);
   const DateData = useMessageStore(state=>state.DateData);
   const TargetRoomID=useRoomIdStore(state=>state.TargetRoomID)
@@ -31,8 +31,9 @@ const GPT_SERVER_URL = process.env.REACT_APP_SOCKET_URL || 'https://chatproject-
     }
     setIsLoading(true);
     try {
-      const response = await fetch(`${GPT_SERVER_URL}/send-gpt`, {  // URL 변경
-            method: 'POST',
+      // const response = await fetch(`${GPT_SERVER_URL}/send-gpt`, {  // URL 변경
+      const response = await fetch(`http://localhost:10001/send-gpt`, {
+      method: 'POST',
             headers: { 
              'Content-Type': 'application/json'
             },
