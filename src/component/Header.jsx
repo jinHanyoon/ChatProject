@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <div className="flex justify-between items-center bg-gray-700 px-6 py-4 border-b border-gray-600">
         <div className="text-xl font-bold text-gray-100">
-            Chat App
+            AI Chat
         </div>
         {!isLogin ? (
             <Link to="/login" className="px-5 py-2 rounded-md bg-indigo-500 text-gray-100 text-sm font-medium hover:bg-indigo-600 transition-all">

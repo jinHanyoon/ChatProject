@@ -27,24 +27,21 @@ export default function ProfileInfo() {
   }
 
 
-    useEffect(()=>{
-      console.log(newName)
 
-    },[newName])
   return (
-    <div className='w-full md:w-1/2 p-6 pt-10'>
+    <div className='w-full md:w-1/2 p-6 pt-10 ml-auto mr-auto'>
       <div className='rounded-2xl  p-6 transition-all '>
         <div className='flex flex-col items-center'>
           <h2 className='text-2xl font-bold text-gray-300 mb-6'>
-            프로필 수정
+            닉네임 변경하기 
           </h2>
           
-          <div className='relative w-full mb-6'>
+          <div className='relative w-full mb-6 '>
             <input 
               onChange={(e)=> setNewName(e.target.value)} 
-              value={newName}
-              className='w-full px-4 py-3 bg-gradient-to-r from-gray-700 to-gray-800 rounded-lg border border-gray-700 focus:border-gray-600 outline-none text-gray-100 placeholder-gray-400 transition duration-200'
-              placeholder='새로운 이름을 입력하세요'
+              className='w-full text-center px-4 py-3 bg-gradient-to-r from-gray-700 to-gray-800 rounded-lg border border-gray-700 focus:border-gray-600 outline-none text-gray-100 placeholder-gray-400 transition duration-200'
+              placeholder={userName}
+
             />
           </div>
 

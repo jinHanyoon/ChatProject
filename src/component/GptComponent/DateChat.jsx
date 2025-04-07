@@ -44,9 +44,7 @@ useEffect(()=>{
     Fetch()
 },[SelectedDate])
 
-useEffect(()=>{
-    console.log(DateData,'filter data')
-},[DateData])
+
 
   return (<>
 

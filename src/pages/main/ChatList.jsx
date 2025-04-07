@@ -82,7 +82,7 @@ export default function ChatList() {
     fetchChatHistory();
 
     return () => {
-      console.log("구독 해제");
+      // console.log("구독 해제");
       channel.unsubscribe();
     };
   }, [userUUID, UserListComplete]);

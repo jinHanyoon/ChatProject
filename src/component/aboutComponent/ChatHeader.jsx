@@ -2,12 +2,8 @@ import React from 'react'
 import { useRef, useEffect } from 'react';
 function ChatHeader ({userInFo, socket,saveChatMessages}) {
   
-const renderCount = useRef(0);
 
-  useEffect(() => {
-    renderCount.current += 1;
-    console.log(`ChatHeader 렌더링 횟수: ${renderCount.current}`);
-  });
+
     const disconnectChatServer = async()=>{
         // console.log('저장되는 요소',
         //   otherUser,

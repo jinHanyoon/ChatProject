@@ -43,9 +43,7 @@ useEffect(()=>{
     Fetch()
 },[SelectedDate])
 
-useEffect(()=>{
-    console.log(GPTChat,'filter data')
-},[GPTChat])
+
 
   return (<>
    

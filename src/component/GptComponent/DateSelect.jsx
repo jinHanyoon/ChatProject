@@ -18,7 +18,7 @@ export default function DateSelect() {
         .select('ChatTalk')
         .eq('roomName',useRoomId );
         if(data){
-            console.log(data)
+            // console.log(data)
             // day.js를 사용하여 날짜 포맷팅 후 중복 제거
             const times = [...new Set(data[0].ChatTalk.map(chat => 
                 dayjs(chat.Create_Time).format('YYYY-MM-DD')
@@ -36,13 +36,7 @@ export default function DateSelect() {
     Fetch()
 },[])
 
-useEffect(()=>{
-    console.log(SelectedDate,'날짜정보')
-},[SelectedDate])
 
-useEffect(()=>{
-    console.log(useRoomId,'select 룸 넘버 ')
-},[useRoomId])
 
   return (
     <select

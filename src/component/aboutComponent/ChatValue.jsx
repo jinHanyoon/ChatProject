@@ -7,14 +7,14 @@ export default function ChatValue({socket,userName}) {
     const [UserInput, setUserInput] = useState("");
 
     const sendMessageServer= () =>{
-        console.log(`메시지를 보냈어요 내용:${UserInput}`)
+        // console.log(`메시지를 보냈어요 내용:${UserInput}`)
          socket?.emit("new message", {username:userName,message:UserInput,
           time: messageTime
     
           }, (response)=>{
         
         })
-        console.log(messageTime)
+        // console.log(messageTime)
         setUserInput('')
        }
   return (

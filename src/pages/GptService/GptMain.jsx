@@ -19,9 +19,6 @@ const GPT_SERVER_URL = process.env.REACT_APP_GPT_URL || 'https://chatproject-1.o
   const TargetRoomID=useRoomIdStore(state=>state.TargetRoomID)
   const [isLoading, setIsLoading] = useState(false);  // 로딩 상태 추가
 
-  useEffect(() => {
-    console.log('현재 DateData:', DateData);
-  }, [DateData]);
 
 
   const sendMessage = async () => {

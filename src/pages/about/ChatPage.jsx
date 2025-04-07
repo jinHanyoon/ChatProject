@@ -79,13 +79,11 @@ export default function ChatPage() {
         .from("Chat_history")
         .update({ ChatTalk: combinedMessages })
         .filter("roomName", "eq", ChatNumber);
-      console.log("저장완료", combinedMessages);
     } else {
       await supabase.from("Chat_history").insert({
         roomName: ChatNumber,
         ChatTalk: messages,
       });
-      console.log("저장완료");
     }
   };
 
@@ -102,7 +100,7 @@ export default function ChatPage() {
   };
 
   const handleOtherUser = (IngUser) => {
-    console.log("받은 other_user:", IngUser); // 디버깅용
+    // console.log("받은 other_user:", IngUser); // 디버깅용
     const sortedUser = [...IngUser].sort((a, b) => a.localeCompare(b));
     setOtherUser(sortedUser);
   };
@@ -110,7 +108,7 @@ export default function ChatPage() {
     try {
       // 먼저 유저 수 체크
       if (otherUser.length === 1 && messages.length > 0) {
-        console.log("유저가 1명일 때 메시지를 저장합니다.");
+        // console.log("유저가 1명일 때 메시지를 저장합니다.");
         await saveChatMessages();
       } else {
         console.log("메시지 저장 조건이 충족되지 않음:", {
@@ -163,7 +161,7 @@ export default function ChatPage() {
       />
       {/* 채팅 메시지 영역 - 스크롤바 스타일링 */}
       <div className="flex-1 overflow-y-auto p-4 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-500/20 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-gray-500/40">
-        <ul className="space-y-4">
+        <ul className="space-y-4 text-left">
           {/* 이전채팅 불러오기 */}
           <ChatHistory _chatData={_chatData} userName={userName} />
           {/* 현재 채팅중인 내용 */}
