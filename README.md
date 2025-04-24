@@ -1,71 +1,40 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 # ChatProject
+
+React, Socket.IO, Tailwind CSS를 사용하여 실시간 채팅 앱을 만든 프로젝트입니다.  
+사용자는 **Supabase**를 통해 로그인하고, 실시간 채팅을 통해 메시지를 주고받을 수 있습니다.  
+닉네임 변경 기능과 GPT API를 통해 채팅 내용을 날짜별로 요약할 수 있습니다.  
+날짜 처리는 **day.js**를 사용하고, UI는 **Tailwind CSS**로 반응형으로 디자인되었습니다.
+
+채팅 기록은 **Supabase**에 저장되어 유저별로 관리됩니다.
+
+---
+
+## 기술 스택
+
+- **React** – UI 라이브러리
+- **Socket.IO** – 실시간 양방향 통신
+- **Tailwind CSS** – 유틸리티 기반 CSS 프레임워크
+- **Supabase** – 인증 기능 및 채팅 기록 저장
+- **GPT API** – OpenAI GPT를 이용한 채팅 요약
+- **day.js** – 날짜 및 시간 처리를 위한 라이브러리
+
+---
+
+## 주요 기능
+
+- [x] **로그인 기능** (Supabase Auth)
+- [x] **실시간 채팅** (Socket.IO)
+- [x] **닉네임 변경 기능**
+- [x] **GPT API**를 통한 날짜별 채팅 내용 요약
+- [x] **채팅 기록 유저별 저장** (Supabase에 기록 저장)
+- [x] **반응형 UI** (Tailwind CSS)
+
+---
+
+## 설치 방법
+
+```bash
+git clone https://github.com/jinhanyoon/ChatProject.git
+cd ChatProject
+npm install
+npm start
